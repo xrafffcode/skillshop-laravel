@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Admin\ConfirmationTransaction;
 use App\Models\Payment;
+use App\Models\Training;
 use App\Models\TransactionTraining;
+use App\Models\User;
 use App\Models\UserTraining;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert as SweetAlert;
 
 class TransactionController extends Controller
@@ -82,6 +86,8 @@ class TransactionController extends Controller
     {
         try {
             $transaction = TransactionTraining::findOrFail($id);
+            $user = User::findOrFail($transaction->user_id);
+            $training = Training::findOrFail($transaction->training_id);
 
             $transaction->update([
                 'transaction_status' => 'SUCCESS'
@@ -92,6 +98,16 @@ class TransactionController extends Controller
                 'training_id' => $transaction->training_id,
                 'status' => 'on_progres'
             ]);
+
+            $mailData = [
+                'nama' => $user->full_name,
+                'kode_transaksi' => $transaction->transaction_code,
+                'pelatihan' =>  $training->title,
+                'harga' => $transaction->transaction_total,
+                'link' => 'https://skillshop.my.id/training-playing/' . $training->slug
+            ];
+
+            Mail::to($user->email)->send(new ConfirmationTransaction($mailData));
         } catch (Exception $e) {
             SweetAlert::error('Error', $e->getMessage());
         }
