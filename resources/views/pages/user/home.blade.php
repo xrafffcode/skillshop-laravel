@@ -32,17 +32,10 @@
                 font-weight: 400;
                 font-size: 16px;
                 color: rgba(19, 19, 19, 0.8);
-                margin: 0px !important
-            }
-
-            .hero .hero-text {
-                color: #34364a;
-                font-size: 68px;
-                font-weight: 700;
-                line-height: 78px;
-
 
             }
+
+
 
             .hero .btn-cta {
                 background: #4F94D7;
@@ -73,9 +66,29 @@
                 padding: 20px 0px;
             }
 
+            .hero .hero-text {
+                color: #34364a;
+                font-size: 43px;
+                font-weight: 700;
+                line-height: 78px;
 
+
+            }
+
+            @media (min-width: 1280px) {
+                .hero .hero-text {
+                    color: #34364a;
+                    font-size: 68px;
+                    font-weight: 700;
+                    line-height: 78px;
+
+
+                }
+            }
 
             @media (min-width: 767px) {
+
+
 
                 .benefit {
 
@@ -339,26 +352,155 @@
             .pt-50 {
                 padding-top: 50px;
             }
+
+            @media only screen and (max-width: 992px) and (min-width: 768px) {
+                .hero .row .col-md-12 {
+                    text-align: center
+                }
+
+                .hero .row .col-md-12 p {
+                    width: 100% !important
+                }
+            }
+
+            @media (max-width: 991px) {
+                .student-testimonies {
+                    padding: 50px 0 80px 0 !important;
+                }
+
+                .testimony-content {
+                    font-size: 15px;
+                }
+            }
+
+            .dcd-light-shadow {
+                box-shadow: 2px 4px 12px rgb(0 0 0 / 10%);
+            }
+
+            .carousel {
+                position: relative;
+            }
+
+            #carouselTestimonies .carousel-control-prev {
+                left: unset;
+                right: 45px;
+            }
+
+            #carouselTestimonies .carousel-control-next,
+            #carouselTestimonies .carousel-control-prev {
+                top: -50px;
+                height: 32px;
+                width: 32px;
+                opacity: unset;
+            }
+
+            .carousel-control-next {
+                right: 0;
+            }
+
+            .carousel-control-next,
+            .carousel-control-prev {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 15%;
+                padding: 0;
+                color: #fff;
+                text-align: center;
+                background: 0 0;
+                border: 0;
+                opacity: .5;
+                transition: opacity .15s ease;
+            }
+
+            .carousel-indicators {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 15;
+                display: flex;
+                justify-content: center;
+                padding-left: 0;
+                margin-right: 15%;
+                margin-left: 15%;
+                list-style: none;
+            }
+
+            #carouselTestimonies .carousel-indicators li {
+                width: 8px;
+                height: 8px;
+                background: #85898e;
+                border-radius: 50%;
+                border: none;
+            }
+
+            .carousel-indicators li {
+                box-sizing: content-box;
+                flex: 0 1 auto;
+                width: 30px;
+                height: 3px;
+                margin-right: 3px;
+                margin-left: 3px;
+                text-indent: -999px;
+                cursor: pointer;
+                background-color: #fff;
+                background-clip: padding-box;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                opacity: .5;
+                transition: opacity .6s ease;
+            }
+
+            .carousel-item {
+                position: relative;
+                display: none;
+                float: left;
+                width: 100%;
+                margin-right: -100%;
+                backface-visibility: hidden;
+                transition: transform .6s ease-in-out;
+            }
+
+            @media (max-width: 767px) {
+                .testimony-content.row {
+                    flex-wrap: wrap-reverse;
+                }
+            }
+
+            #carouselTestimonies .carousel-control-prev-icon {
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABFFBMVEUAAAAzM2YrK1UkSUkgQGA5OVUrOVUoQ1EzQE0xPVUuOlEsQ04rQFUpPVIxO04vQkwvPFEuO04tQFMsPlEtPk8sPU4rPFErP1IuPE8uQFIsPk8vQFEtPk4tPVEsP1EsPlAvPU8uQFEtP1AtPVAtP1EsPlAuPlAtPU8tP1AsPk8tPk8sPlAsPVAuPk8tPlEtPlAtPlAtP1EuPlAtPlAuPlEtPVAtPlAsPVAtPlAtPk8tPlAsPlAtPlAtPlAtP1AtPlAtPlAuPlAtP1AtPlAtPlAtPk8tPlAtPlAtPlAtPlAtPlAtPlEtPlAtPlAtPlAsPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlD////NJq3WAAAAWnRSTlMABQYHCAkSExQVFhcYGRobJicoKS0uLzU3ODo8Pj9FRkdISX1+f4CBgoSUlZaXmKmqq629vr/Aw8XHyMnKy8zNzs/Q0tPX293f4uPk5enq6/Dx8vP09fj5+v6o9oGGAAAAAWJLR0RbdLyVNAAAAXVJREFUOMuFU1dbwkAQHBIUhQRFRWkWpEqRoggBBCtNQRAUb/7/D/EhQgIkn/t0ezPf7uzNHrAMOZpvjn5+Rs1cVMZmePOfXMYkr67BzqsvilYs7HE4POF4m5ylnWZcbVAU9o3cVxTUTEWO39g5WS0Z6HLgXyTKgNXddU3bN3zf049bDd46NlVLFWq6jit2XBZjYafLFAB4v4TR392qGoygmCoArlkw8Bc2TTVKzALyRCzn233mq2IiHIixhEve2+HAAy+QZ8wWR4JZNBm2xRFhHR/02OJQOcScEgBgypXQp5X5/T/B3EK1atEwi1Q3RGrIMQ5bRpIZRNmGLeOJZ5AnwmfHOORYAnIs2plVZhaAOhMBa7tDut1Is7tjuTA9JvSV11ixWrk71v4+kNJn1b2Ou2747l0k/gG7wVU81GP/yPSkGkXJZ1qlsmBtxVtnakY+JCKKLCunyUdymlj/wEp2bHg5zngsxpLOM/XhfD6sZ84l4/YXSkpWxAlyJVQAAAAASUVORK5CYII=);
+            }
+
+            #carouselTestimonies .carousel-control-next-icon {
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABFFBMVEUAAAAzM2YrK1UkSUkgQGA5OVUrOVUoQ1EzQE0xPVUuOlEsQ04rQFUpPVIxO04vQkwvPFEuO04tQFMsPlEtPk8sPU4rPFErP1IuPE8uQFIsPk8vQFEtPk4tPVEsP1EsPlAvPU8uQFEtP1AtPVAtP1EsPlAuPlAtPU8tP1AsPk8tPk8sPlAsPVAuPk8tPlEtPlAtPlAtP1EuPlAtPlAuPlEtPVAtPlAsPVAtPlAtPk8tPlAsPlAtPlAtPlAtP1AtPlAtPlAuPlAtP1AtPlAtPlAtPk8tPlAtPlAtPlAtPlAtPlAtPlEtPlAtPlAtPlAsPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlAtPlD////NJq3WAAAAWnRSTlMABQYHCAkSExQVFhcYGRobJicoKS0uLzU3ODo8Pj9FRkdISX1+f4CBgoSUlZaXmKmqq629vr/Aw8XHyMnKy8zNzs/Q0tPX293f4uPk5enq6/Dx8vP09fj5+v6o9oGGAAAAAWJLR0RbdLyVNAAAAXZJREFUOMuFU8lWwkAQLBIVgQFXVMANAZVNQUQMILiyKQoCwtT/f4iHSEhC8uzT9FTNdNXrbsAINZ6vf85mn/VcXMVyhPLfNGKYD9rglfSEspGIBTyeQCzZJMeXK2Y8WKO83lzkWwVJzfTJ3jtb+9YvD9rsheeJ6LHis2taK/FjQz+u1njrWVatlKnpOtJseR1sYb3NCwAITaSpfqXhN84RORIArnhtelbn64JRZBZQh9LkD74Xvhn+tuVAwRkfLJUtjEeeIs8EXBkpZlFnDK6MQ1bxxQBcGUH2MaWi+6MlRvoE8Od/gksJYZSoOYoUc5Eacky64jhnBnE2XXE88xjqUG654TscKECOBbdm3TALIDiWB87tjurtxiXb644D02FKH3mNZaeRu+P93wKJLit+O+4t8SM0T8I9tiNWPNphd9e0OBpl0eR2+0byXlhW72JMPqYOhaqKo/MncpSyL7DIDha9HGQCDraUk0y1P532q5kTZXH7CwVWVsTnnK42AAAAAElFTkSuQmCC);
+            }
         </style>
     @endpush
     <div class="position-relative">
         <img src="{{ asset('assets/frontend/image/hero-image.png') }}" alt="bg-header"
-            class="img-fluid img-header d-none d-md-block" width="800">
+            class="img-fluid img-header d-none d-md-none d-lg-block" width="800">
     </div>
     <section class="hero ">
         <div class="d-flex container h-100 w-100 min-vh-75 align-items-center ">
             <div class="row py-4 ">
-                <div class="col-md-5 pb-5">
+                <div class="col-lg-5 col-md-12 pb-5 justify-content-center">
                     <h1 class="fw-bold hero-text mb-4">
                         Tingkatkan keterampilanmu menjadi lebih baik.
                     </h1>
                     <p>Berbagai kategori pelatihan dengan mentor yang berpengalaman siap membantu anda untuk berkembang
                         menjadi lebih baik.</p>
-                    <a href="{{ route('register') }}" class="btn btn-cta btn-block mt-4">
-                        Daftar
-                    </a>
+                    @guest
+                        <a href="{{ route('register') }}" class="btn btn-cta btn-block mt-4">
+                            Daftar
+                        </a>
+                    @endguest
                 </div>
-                <div class="col-md-7 mt-3">
+                <div class="col-lg-7 mt-3">
 
                 </div>
             </div>
@@ -380,10 +522,7 @@
                             <h5 class="card-title
                             fw-bold">Edukasi</h5>
                             <p class="card-text">Dapat belajar untuk meningkatkan keterampilanmu disini.</p>
-                            <a href="#" class="text-decoration-none">
-                                <p class="card-more mt-4">Lebih lanjut <span><i class="fas fa-arrow-right"></i></span>
-                                </p>
-                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -395,10 +534,7 @@
                             <h5 class="card-title
                             fw-bold">Marketplace</h5>
                             <p class="card-text">Dapat menjual hasil produk disini secara online dengan mudah.</p>
-                            <a href="#" class="text-decoration-none">
-                                <p class="card-more mt-4">Lebih lanjut <span><i class="fas fa-arrow-right"></i></span>
-                                </p>
-                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -408,12 +544,11 @@
                             <img src="{{ asset('assets/frontend/image/easy-pay.svg') }}" alt="icon"
                                 class="img-fluid mb-3" width="100">
                             <h5 class="card-title
-                            fw-bold">Easy Payment</h5>
-                            <p class="card-text">Sistem pembayaran yang sangat helpfull hanya untuk anda.</p>
-                            <a href="#" class="text-decoration-none">
-                                <p class="card-more mt-4">Lebih lanjut <span><i class="fas fa-arrow-right"></i></span>
-                                </p>
-                            </a>
+                            fw-bold">Pay Later</h5>
+                            <p class="card-text">
+                                Dapat membayar setelah menyelesaikan pelatihan dan menjual produk.
+                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -461,8 +596,99 @@
             </div>
         </div>
     </section> --}}
+    <section class="student-testimonies d-block d-sm-block d-md-block d-lg-none">
+        <div class="container">
+            <h3 class="mb-4 font-weight-500">Testimoni </h3>
+            <div id="carouselTestimonies" class="carousel slide dcd-light-shadow" data-ride="carousel">
+                <a class="carousel-control-prev" href="#carouselTestimonies" role="button" data-slide="prev"
+                    aria-label="Previous Testimony">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselTestimonies" role="button" data-slide="next"
+                    aria-label="Next Testimony">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
 
-    <section class="pt-50 pb-50 d-flex justify-content-start align-items-center position-relative"
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselTestimonies" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselTestimonies" data-slide-to="1" class=""></li>
+
+
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card borderless border-0">
+                            <div class="row p-0 card-body testimony-content">
+                                <div class="col-lg-7 col-md-7 col-sm-12 pr-0">
+                                    <div class="p-lg-5 p-4">
+                                        <div class="js-balanced-testimonies">
+                                            <p class="font-weight-500 mb-4">“Belajar disini sangat menyengankan,
+                                                mentornya sudah sangat profesional, jadwalnya juga enak!”</p>
+                                            <small class="font-weight-500">
+                                                Indah Cahyani, <br>
+
+                                                Lulusan Pelatihan Menjahit
+                                            </small>
+                                        </div>
+                                        <hr>
+
+                                    </div>
+                                </div>
+                                <img src="{{ asset('assets/frontend/image/indah.jpeg') }}"
+                                    data-original="{{ asset('assets/frontend/image/indah.jpeg') }}" alt="Indah Cahyani"
+                                    class="lazy col-md-5" width="445" height="390" style="display: block;">
+                                <noscript>
+                                    <img src='{{ asset('assets/frontend/image/indah.jpeg') }}'
+                                        class='noscript noscript-img' alt='Indah Cahyani' class='lazy col-md-5'
+                                        width='445' height='390'>
+                                </noscript>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="card borderless border-0">
+                            <div class="row p-0 card-body testimony-content">
+                                <div class="col-lg-7 col-md-7 col-sm-12 pr-0">
+                                    <div class="p-lg-5 p-4">
+                                        <div class="js-balanced-testimonies">
+                                            <p class="font-weight-500 mb-4">“Join Pelatiham SkillShop! Banyak sekali
+                                                materi yang
+                                                bagus di sini. Pengalaman saya, dengan pelatihan fotografer di SkillShop
+                                                saya
+                                                jadi PD untuk ambil berbagai freelance"</p>
+                                            <small class="font-weight-500">
+                                                Park Jihyo, <br>
+
+                                                Lulusan Pelatihan Fotografer
+                                            </small>
+                                        </div>
+                                        <hr>
+
+                                    </div>
+                                </div>
+                                <img src="{{ asset('assets/frontend/image/jihyo.jpeg') }}"
+                                    data-original="{{ asset('assets/frontend/image/jihyo.jpeg') }}" alt="Said Faisal"
+                                    class="lazy col-md-5" width="445" height="390" style="display: block;">
+                                <noscript>
+                                    <img src='{{ asset('assets/frontend/image/jihyo.jpeg') }}'
+                                        class='noscript noscript-img' alt='Said Faisal' class='lazy col-md-5'
+                                        width='445' height='390'>
+                                </noscript>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section
+        class="pt-50 pb-50 d-flex justify-content-start align-items-center position-relative d-md-none d-sm-none d-lg-flex d-none"
         id="testimonial-section-v3">
         <div class="container">
             <div class="row d-flex justify-content-start align-items-center gx-0">
@@ -519,4 +745,8 @@
             </div>
         </div>
     </section>
+
+    @push('addonScript')
+        <script src="https://d17ivq9b7rppb3.cloudfront.net/build/commons_script-eb16678ced.js"></script>
+    @endpush
 </x-user-layout>

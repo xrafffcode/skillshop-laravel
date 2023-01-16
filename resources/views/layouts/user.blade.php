@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description"
+        content="Skillshop adalah website aplikasi penyedia kursus pelatihan untuk membantu masyarakat meningkatkan kemampuan dan ketrampilan yang ditujukan untuk membuka peluang usaha">
+    <meta name="keywords" content="website pelatihan, skillshop my id, umkm, telkom, indonesia, pelatihan, pay later">
     <title>{{ $title }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

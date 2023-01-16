@@ -63,7 +63,7 @@
 
             .articel .title {
                 font-weight: bold;
-                font-size: 3.25rem;
+                font-size: 2.25rem;
                 line-height: 150%;
                 /* or 78px */
 
@@ -103,6 +103,12 @@
                 /* or 39px */
 
                 color: #131313;
+            }
+
+            @media (max-width: 767px) {
+                .articel .thumbnail {
+                    height: 200px;
+                }
             }
         </style>
     @endpush

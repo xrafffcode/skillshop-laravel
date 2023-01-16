@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light position-fixed top-0 w-100 py-lg-3">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('assets/frontend/image/logo.svg') }}" class="mb-1">
+            <img src="{{ asset('assets/frontend/image/logo.svg') }}" class="mb-1" alt="logo-skillshop">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,8 @@
                 <a class="nav-link me-4 {{ $active == 'home' ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
                 <a class="nav-link me-4 {{ $active == 'training' ? 'active' : '' }}"
                     href="{{ route('training.index') }}">Pelatihan</a>
-                <a class="nav-link me-4 {{ $active == 'marcketplace' ? 'active' : '' }}" href="">Marketplace</a>
+                <a class="nav-link me-4 {{ $active == 'marcketplace' ? 'active' : '' }}"
+                    href="martketplace.html">Marketplace</a>
                 <a class="nav-link me-4 {{ $active == 'articel' ? 'active' : '' }}"
                     href="{{ route('articel.index') }}">Artikel</a>
             </div>

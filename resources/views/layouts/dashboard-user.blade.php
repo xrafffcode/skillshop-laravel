@@ -60,6 +60,10 @@
                                 <a class="nav-link {{ $active == 'my-order' ? 'active' : '' }}"
                                     href="{{ route('profil.myorder') }}">Pesanan Saya</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ $active == 'my-articel' ? 'active' : '' }}"
+                                    href="{{ route('profil.myarticel') }}">Artikel Saya</a>
+                            </li>
                         </ul>
 
                     </div>

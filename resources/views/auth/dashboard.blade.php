@@ -51,10 +51,12 @@
             <div class="small-box">
                 <div class="inner">
                     <div class="d-flex">
-                        <i class="fas fa-clipboard me-3"></i>
-                        <h3>53</h3>
+                        <i class="fas fa-list-alt me-3"></i>
+                        <h3>
+                            {{ $ca }}
+                        </h3>
                     </div>
-                    <h6>Pelatihan terdaftar</h5>
+                    <h6>Artikel diterbitkan</h5>
                 </div>
 
             </div>

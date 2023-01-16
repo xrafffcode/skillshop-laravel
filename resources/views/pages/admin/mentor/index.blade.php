@@ -25,8 +25,7 @@
                                 <td>{{ $mentor->email }}</td>
 
                                 <td>
-                                    <a href="{{ route('admin.pelatihan.edit', $mentor->id) }}"
-                                        class="btn btn-warning me-1 mb-1">Edit</a>
+
                                     <form action="{{ route('admin.pelatihan.destroy', $mentor->id) }}" method="post"
                                         class="d-inline">
                                         @csrf

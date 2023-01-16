@@ -344,7 +344,7 @@
                     </div>
                     <form id="form-manual" method="post" action="{{ route('checkout.checkout') }}">
                         @csrf
-                        <div class="payment-details mt-lg-4 mt-sm-0">
+                        <div class="payment-details  mt-4">
                             <div class="item-pricing item-mentor">
 
                                 <input id="training_id" type="hidden" name="training_id" value="{{ $training->id }}">

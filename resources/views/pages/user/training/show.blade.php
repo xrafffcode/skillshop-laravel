@@ -13,6 +13,10 @@
                 color: #ffffff !important;
             }
 
+            .dropdown .dropdown-menu li a:hover {
+                color: #000000 !important;
+            }
+
             .navbar .navbar-nav .active {
                 color: #ffffff !important;
             }
@@ -51,22 +55,25 @@
             }
 
             .hero {
-                height: 60vh;
+                height: 75vh;
             }
 
 
-            @media (max-width: 756px) {}
-
-
-            @media (min-width: 756px) {
-                .hero {
-                    height: 75vh !important;
-                }
-
+            @media (min-width: 986px) {
                 .content {
                     padding: 150px 0px;
                 }
             }
+
+
+            @media (min-width: 992px) {
+                .hero {
+                    height: 90vh !important;
+                }
+
+
+            }
+
 
 
 
@@ -268,7 +275,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card card-hero text-center mt-5 mx-auto d-none d-md-flex d-lg-flex">
+            <div class="card card-hero text-center mt-5 mx-auto d-none d-md-none d-lg-flex">
 
                 <div class="card-body p-4">
                     <div class="d-flex align-items-center justify-content-center gap-5">

@@ -11,7 +11,7 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Thumbnail</th>
-
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -24,8 +24,22 @@
                                     <img src="{{ asset('storage/' . $articel->thumbnail) }}" alt="thumbnail"
                                         class="img-thumbnail" width="100">
                                 </td>
-
                                 <td>
+                                    @if ($articel->status == 'accepted')
+                                        <span class="badge  bg-success">Aceppted</span>
+                                    @else
+                                        <span class="badge bg-danger">Need Review</span>
+                                    @endif
+                                </td>
+                                <td nowrap>
+                                    @if ($articel->status == 'on_review')
+                                        <a href="{{ route('admin.artikel.show', $articel->id) }}"
+                                            class="btn btn-info me-1 mb-1">
+                                            Review
+                                        </a>
+                                    @endif
+
+
                                     <a href="{{ route('admin.artikel.edit', $articel->id) }}"
                                         class="btn btn-warning me-1 mb-1">Edit</a>
                                     <form action="{{ route('admin.artikel.destroy', $articel->id) }}" method="post"
@@ -44,6 +58,8 @@
             <a href="{{ route('admin.artikel.create') }}" class="btn btn-primary me-1 mb-1 float-end">Tambah
                 Artikel</a>
         </div>
+
+
     </div>
 
 

@@ -20,6 +20,10 @@
                 color: #ffffff !important;
             }
 
+            .dropdown .dropdown-menu li a:hover {
+                color: #000000 !important;
+            }
+
             .navbar .navbar-nav .active {
                 color: #ffffff !important;
             }
@@ -235,7 +239,7 @@
                                 style="background-image: url('{{ asset('storage/' . $articel->thumbnail) }}');">
                             </div>
                         </a>
-                        <a href="" class="card-body">
+                        <a href="/artikel/{{ $articel->slug }}" class="card-body">
                             <p>
                                 @php
                                     $formattedDate = \Carbon\Carbon::parse($articel->created_at)->format('d F, Y');

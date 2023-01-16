@@ -17,6 +17,10 @@
                 color: #ffffff !important;
             }
 
+            .dropdown .dropdown-menu li a:hover {
+                color: #000000 !important;
+            }
+
             .navbar .navbar-nav .active {
                 color: #ffffff !important;
             }
