@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Articel;
 use App\Models\User;
 use App\Models\UserTraining;
 use Illuminate\Http\Request;
@@ -21,11 +22,12 @@ class ProfileSettingController extends Controller
             $query->where('user_id', Auth::user()->id);
         })->get();
 
-
+        $countArticel = Articel::where([['user_id', Auth::user()->id], ['status', 'accepted']])->count();
 
         return view('auth.dashboard', [
             'ct' => $countTraining,
-            'ut' => $userTraining
+            'ut' => $userTraining,
+            'ca' => $countArticel
         ]);
     }
 
@@ -67,7 +69,6 @@ class ProfileSettingController extends Controller
 
     public function myClass()
     {
-
         $countTraining = UserTraining::where('user_id', Auth::user()->id)->count();
 
         $userTraining = UserTraining::with(['training',  'user'])->whereHas('user', function ($query) {

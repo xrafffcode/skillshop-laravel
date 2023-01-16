@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ArtikelRequest;
+use App\Mail\Admin\ConfirmationArticel;
 use App\Models\Articel;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert as SweetAlert;
 
@@ -69,7 +71,9 @@ class ArticelController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('pages.admin.articel.show', [
+            'articel' => Articel::findOrFail($id)
+        ]);
     }
 
     /**
@@ -103,6 +107,36 @@ class ArticelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $articel = Articel::findOrFail($id);
+
+        try {
+            $articel->delete();
+        } catch (Exception $e) {
+            SweetAlert::toast('Data Artikel Gagal Dihapus', 'error')->timerProgressBar();
+
+            return redirect()->route('admin.artikel.index');
+        }
+
+        SweetAlert::toast('Data Artikel Berhasil Dihapus', 'success')->timerProgressBar();
+        return redirect()->route('admin.artikel.index');
+    }
+
+    public function acc(Request $request)
+    {
+        $articel = Articel::with('user')->findOrFail($request->id);
+        $articel->update([
+            'status' => 'accepted'
+        ]);
+
+        $mailData = [
+            'nama' => $articel->user->full_name,
+            'artikel' => $articel->title,
+            'link' =>  'https://skillshop.my.id/artikel/' . $articel->slug
+        ];
+
+        Mail::to($articel->user->email)->send(new ConfirmationArticel($mailData));
+
+        SweetAlert::toast('Artikel Berhasil Disetujui', 'success')->timerProgressBar();
+        return redirect()->route('admin.artikel.index');
     }
 }

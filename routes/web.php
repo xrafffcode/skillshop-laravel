@@ -1,7 +1,9 @@
 <?php
 
+use App\Mail\Admin\ConfirmationTransaction;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,11 @@ use Illuminate\Support\Facades\Auth;
 
 Route::namespace('App\Http\Controllers\User')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/kontak', function () {
+        return view('pages.user.contact');
+    })->name('contact');
+
+
 
     // Route Pelatihan
     Route::get('/pelatihan', 'TrainingController@index')->name('training.index');
@@ -49,6 +56,10 @@ Route::prefix('profil')->middleware(['auth'])->group(function () {
     Route::put('/profil', 'App\Http\Controllers\Auth\ProfileSettingController@update')->name('profil.update');
     Route::get('/kelas-saya', 'App\Http\Controllers\Auth\ProfileSettingController@myClass')->name('profil.myclass');
     Route::get('/orderan-saya', 'App\Http\Controllers\User\MyOrderController@index')->name('profil.myorder');
+    Route::get('/artikel-saya', 'App\Http\Controllers\User\ArticelController@dashboard')->name('profil.myarticel');
+    Route::get('/artikel-saya/create', 'App\Http\Controllers\User\ArticelController@create')->name('profil.createarticel');
+    Route::post('/artikel-saya', 'App\Http\Controllers\User\ArticelController@store')->name('profil.storearticel');
+    Route::delete('/artikel/{id}', 'App\Http\Controllers\User\ArticelController@destroy')->name('profil.deletearticel');
 });
 
 
@@ -61,6 +72,8 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
         Route::resource('mentor', 'MentorController');
         Route::resource('artikel', 'ArticelController');
         Route::resource('transaksi', 'TransactionController');
+
+        Route::post('/review-artikel', 'ArticelController@acc')->name('artikel.accept');
     });
 });
 
