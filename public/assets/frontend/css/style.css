@@ -156,7 +156,8 @@ input {
 }
 
 .navbar .btn-signup,
-.navbar-expand-lg .login {
+.navbar-expand-lg .login,
+.btn-login {
     border-radius: 12px;
     padding: 7.6px 32px 8px 32px;
 }
@@ -570,6 +571,10 @@ footer a:hover {
     }
 
     .navbar-expand-lg .btn-signup {
+        color: white !important;
+    }
+
+    .login:hover {
         color: white !important;
     }
 

@@ -72,4 +72,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Articel::class, 'user_id', 'id');
     }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'user_id', 'id');
+    }
+
+    public function transactionProducts()
+    {
+        return $this->hasMany(TransactionProduct::class, 'user_id', 'id');
+    }
+
+    public function productPayments()
+    {
+        return $this->hasMany(ProductPayment::class, 'user_id', 'id');
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Articel;
+use App\Models\TransactionProduct;
 use App\Models\User;
 use App\Models\UserTraining;
 use Illuminate\Http\Request;
@@ -24,10 +25,13 @@ class ProfileSettingController extends Controller
 
         $countArticel = Articel::where([['user_id', Auth::user()->id], ['status', 'accepted']])->count();
 
+        $countShop = TransactionProduct::where('seller_id', Auth::user()->id)->count();
+
         return view('auth.dashboard', [
             'ct' => $countTraining,
             'ut' => $userTraining,
-            'ca' => $countArticel
+            'ca' => $countArticel,
+            'cs' => $countShop
         ]);
     }
 

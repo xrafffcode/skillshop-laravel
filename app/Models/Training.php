@@ -53,4 +53,9 @@ class Training extends Model
     {
         return $this->hasMany(TestimonialTraining::class, 'training_id', 'id');
     }
+
+    public function product()
+    {
+        return $this->hasOne(Product::class, 'training_id', 'id');
+    }
 }

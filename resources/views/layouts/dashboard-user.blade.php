@@ -64,6 +64,14 @@
                                 <a class="nav-link {{ $active == 'my-articel' ? 'active' : '' }}"
                                     href="{{ route('profil.myarticel') }}">Artikel Saya</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ $active == 'my-product' ? 'active' : '' }}"
+                                    href="{{ route('profil.myproduct') }}">Jual Hasil Karya</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ $active == 'my-transaction' ? 'active' : '' }}"
+                                    href="{{ route('profil.transaction') }}">Transaksi</a>
+                            </li>
                         </ul>
 
                     </div>

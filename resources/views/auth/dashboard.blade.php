@@ -65,10 +65,10 @@
             <div class="small-box">
                 <div class="inner">
                     <div class="d-flex">
-                        <i class="fas fa-clipboard me-3"></i>
-                        <h3>53</h3>
+                        <i class="fas fa-cart-arrow-down me-3"></i>
+                        <h3>{{ $cs }}</h3>
                     </div>
-                    <h6>Pelatihan terdaftar</h5>
+                    <h6>Produk Terjual</h5>
                 </div>
 
             </div>

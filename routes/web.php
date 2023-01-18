@@ -36,6 +36,10 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
         Route::get('/{training:slug}', 'MyTrainingController@show')->name('training.play');
     });
 
+
+    Route::get('/marketplace', 'ProductController@index')->name('product.index');
+    Route::get('/marketplace/{product:slug}', 'ProductController@show')->name('product.show');
+
     Route::group(['middleware' => 'auth'], function () {
 
         // Route Checkout Pelatihan
@@ -46,6 +50,17 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
         Route::get('/invoice/{transaction_code}', 'MyOrderController@invoice')->name('invoice');
 
         Route::post('/submit-rating', 'MyTrainingController@sendReview')->name('training.review');
+
+        // Route Checkout Marketplace
+        Route::post('/filldata/{product:slug}', 'OrderProductController@store')->name('product.order');
+        Route::post('/review/{product:slug}', 'OrderProductController@review')->name('product.review');
+        Route::post('/payment/{product:slug}', 'OrderProductController@payment')->name('product.payment');
+        Route::post('/payment-process/{product:slug}', 'OrderProductController@payment_proccess')->name('product.payment_process');
+        Route::post('/checkout', 'OrderProductController@checkout')->name('product.checkout-product');
+
+        Route::get('/order-berhasil', function () {
+            return view('pages.user.progress');
+        })->name('checkout-progress');
     });
 });
 
@@ -56,10 +71,22 @@ Route::prefix('profil')->middleware(['auth'])->group(function () {
     Route::put('/profil', 'App\Http\Controllers\Auth\ProfileSettingController@update')->name('profil.update');
     Route::get('/kelas-saya', 'App\Http\Controllers\Auth\ProfileSettingController@myClass')->name('profil.myclass');
     Route::get('/orderan-saya', 'App\Http\Controllers\User\MyOrderController@index')->name('profil.myorder');
+
+
     Route::get('/artikel-saya', 'App\Http\Controllers\User\ArticelController@dashboard')->name('profil.myarticel');
     Route::get('/artikel-saya/create', 'App\Http\Controllers\User\ArticelController@create')->name('profil.createarticel');
     Route::post('/artikel-saya', 'App\Http\Controllers\User\ArticelController@store')->name('profil.storearticel');
     Route::delete('/artikel/{id}', 'App\Http\Controllers\User\ArticelController@destroy')->name('profil.deletearticel');
+
+    Route::get('/produk-saya', 'App\Http\Controllers\User\MarketplaceController@index')->name('profil.myproduct');
+    Route::get('/produk-saya/create', 'App\Http\Controllers\User\MarketplaceController@create')->name('profil.createproduct');
+    Route::post('/produk-saya', 'App\Http\Controllers\User\MarketplaceController@store')->name('profil.storeproduct');
+    Route::get('/produk-saya/{id}', 'App\Http\Controllers\User\MarketplaceController@addPhoto')->name('profil.addphotoproduct');
+    Route::post('/produk-saya/{id}', 'App\Http\Controllers\User\MarketplaceController@storePhoto')->name('profil.storephotoproduct');
+
+    Route::get('/transaksi', 'App\Http\Controllers\User\TransactionController@index')->name('profil.transaction');
+    Route::get('/transaksi/{id}', 'App\Http\Controllers\User\TransactionController@show')->name('profil.transactiondetail');
+    Route::put('/transaksi/{id}', 'App\Http\Controllers\User\TransactionController@update')->name('profil.updatetransaction');
 });
 
 

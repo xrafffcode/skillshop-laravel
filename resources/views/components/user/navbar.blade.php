@@ -14,14 +14,14 @@
                 <a class="nav-link me-4 {{ $active == 'home' ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
                 <a class="nav-link me-4 {{ $active == 'training' ? 'active' : '' }}"
                     href="{{ route('training.index') }}">Pelatihan</a>
-                <a class="nav-link me-4 {{ $active == 'marcketplace' ? 'active' : '' }}"
-                    href="martketplace.html">Marketplace</a>
+                <a class="nav-link me-4 {{ $active == 'marketplace' ? 'active' : '' }}"
+                    href="{{ route('product.index') }}">Marketplace</a>
                 <a class="nav-link me-4 {{ $active == 'articel' ? 'active' : '' }}"
                     href="{{ route('articel.index') }}">Artikel</a>
             </div>
             <div class="navbar-nav">
                 @guest
-
+                    <a href="{{ route('login') }}" class="btn text-decoration-none login me-3 shadow-none">Masuk</a>
                     <a href="{{ route('register') }}" class="btn btn-signup bgTheme text-white  shadow-none">Daftar</a>
                 @endguest
                 @auth
